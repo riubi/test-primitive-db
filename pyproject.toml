@@ -1,0 +1,37 @@
+[project]
+name = "primitive-db"
+version = "0.1.0"
+description = "A primitive database implementation in Python"
+authors = [
+    {name = "Papina Ruslan", email = "clu@tut.by"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "prompt>=0.4.1",
+    "prettytable>=3.9.0",
+]
+
+[project.scripts]
+project = "src.primitive_db.main:main"
+
+[tool.poetry]
+packages = [
+    { include = "src" },
+]
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.0"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+exclude = ["venv", ".venv", "dist", "__pycache__"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
